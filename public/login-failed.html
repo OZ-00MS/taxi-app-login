@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Failed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg,#111,#333);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(255,255,255,0.1);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      max-width: 500px;
+      width: 100%;
+    }
+    h1 { font-family:'Bungee',sans-serif; font-size:32px; margin-bottom:20px; color:#ff3b3b; }
+    p { font-size:16px; margin-bottom:20px; color:#ddd; }
+    button {
+      padding:12px 25px;
+      border:none;
+      border-radius:8px;
+      background:#ffb703;
+      color:#000;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    button:hover { background:#fb8500; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Login Failed 😔</h1>
+    <p>Sorry, the username or password you entered is incorrect.</p>
+    <button onclick="backToLogin()">Try Again</button>
+  </div>
+
+  <script>
+    function backToLogin() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

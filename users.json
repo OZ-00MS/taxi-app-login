@@ -1,0 +1,37 @@
+[
+  {
+    "fullname": "John Doe",
+    "username": "johnd",
+    "password": "123456",
+    "phone": "123456789",
+    "gender": "Male"
+  },
+  {
+    "fullname": "oz",
+    "username": "ad",
+    "password": "2020",
+    "phone": "0660606060",
+    "gender": "Male"
+  },
+  {
+    "fullname": "It's oz",
+    "username": "i'm oz",
+    "password": "oz oz",
+    "phone": "0694112625",
+    "gender": "Male"
+  },
+  {
+    "fullname": "users x",
+    "username": "users",
+    "password": "users",
+    "phone": "0694112625",
+    "gender": "Female"
+  },
+  {
+    "fullname": "manhunter",
+    "username": "man",
+    "password": "man",
+    "phone": "0660606060",
+    "gender": "Male"
+  }
+]

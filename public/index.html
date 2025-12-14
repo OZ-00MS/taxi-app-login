@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Taxi App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #111, #333);
+      padding: 15px;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      display: flex;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Left side */
+    .b1 {
+      width: 60%;
+      padding: 40px;
+      background: linear-gradient(135deg, #ffb703, #fb8500);
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .b1 h1,
+    .b1 p {
+      font-family: "Bungee", sans-serif;
+    }
+
+    .b1 h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .b1 img {
+      margin: 15px 0;
+      max-width: 150px;
+    }
+
+    /* Right side */
+    .b2 {
+      width: 40%;
+      padding: 40px;
+      background: #f8f9fa;
+    }
+
+    .b2 h1,
+    .b2 h3,
+    label,
+    button {
+      font-family: "Bungee", sans-serif;
+    }
+
+    .b2 h3 {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ffb703;
+    }
+
+    /* Remember + Forgot (same line) */
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      margin-bottom: 15px;
+      white-space: nowrap;
+    }
+
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .options input[type="checkbox"] {
+      margin: 0;
+    }
+
+    .options a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #ffb703;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #fb8500;
+    }
+
+    .signup-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .signup-text a {
+      color: #007bff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .box {
+        flex-direction: column;
+      }
+
+      .b1,
+      .b2 {
+        width: 100%;
+      }
+
+      .b1 {
+        padding: 30px;
+      }
+
+      .b2 {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="b1">
+      <h1>Taxi App</h1>
+      <img src="pic/transport.png" alt="Taxi">
+      <p>The taxi knows where to find you.</p>
+    </div>
+
+    <div class="b2">
+      <h1>Welcome 👋</h1>
+      <h3>Login</h3>
+
+      <form method="POST" action="/login">
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username" required>
+
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" required>
+
+        <div class="options">
+          <label>
+            <input type="checkbox" id="rememberMe">
+            Remember me
+          </label>
+          <a href="#" id="forgotPassword">Forgot password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+ </form>
+        <p class="signup-text">
+          Don’t have an account?
+          <a href="signup.html">Sign up</a>
+        </p>
+     
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const rememberMe = document.getElementById("rememberMe");
+    const forgotPassword = document.getElementById("forgotPassword");
+    const signupLink = document.getElementById("signupLink");
+
+    // Load remembered email
+    window.addEventListener("load", () => {
+      const savedEmail = localStorage.getItem("rememberedEmail");
+      if (savedEmail) {
+        emailInput.value = savedEmail;
+        rememberMe.checked = true;
+      }
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = emailInput.value;
+      const password = passwordInput.value;
+
+      console.log("Email:", email);
+      console.log("Password:", password);
+
+      if (rememberMe.checked) {
+        localStorage.setItem("rememberedEmail", email);
+      } else {
+        localStorage.removeItem("rememberedEmail");
+      }
+
+      alert("Login submitted (frontend only)");
+    });
+
+    forgotPassword.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Forgot password requires backend");
+    });
+
+    signupLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Sign up page coming soon 🚀");
+    });
+  </script>
+
+</body>
+</html>
