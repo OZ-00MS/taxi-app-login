@@ -5,75 +5,12 @@
   <title>Taxi App - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="https://raw.githubusercontent.com/OZ-00MS/source/refs/heads/main/space%20a/icon.jpg" type="image/png" />
-
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #111, #333);
-      color: #fff;
-      padding: 20px;
-    }
-
-    .home-container {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      width: 100%;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: 'Bungee', sans-serif;
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: #ddd;
-      font-family: 'Bungee', sans-serif;
-    }
-
-    button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 8px;
-      background: #ffb703;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-family: 'Bungee', sans-serif;
-    }
-
-    button:hover {
-      background: #fb8500;
-    }
-
-    .info-box {
-      background: rgba(0,0,0,0.2);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-  </style>
 </head>
 <body>
 
@@ -84,21 +21,7 @@
      
   </div>
 
-  <script>
-    // Get username from URL query parameters
-    const params = new URLSearchParams(window.location.search);
-    const username = params.get('username');
-
-    // Display username dynamically
-    if(username) {
-      document.getElementById('welcomeText').textContent = `Welcome, ${username}!`;
-    }
-
-    // Logout button function
-    function logout() {
-      window.location.href = "index.html";
-    }
-  </script>
+  <script src="home.js"></script>
 
 </body>
 </html>
