@@ -33,5 +33,12 @@
     "password": "man",
     "phone": "0660606060",
     "gender": "Male"
+  },
+  {
+    "fullname": "oz",
+    "username": "i'm ",
+    "password": "0000",
+    "phone": "0660606060",
+    "gender": "Male"
   }
 ]
